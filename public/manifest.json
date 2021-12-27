@@ -33,6 +33,7 @@
   ],
   "host_permissions": [
     "<all_urls>"
+
   ],
   "icons": {
     "16": "logo192.png",
