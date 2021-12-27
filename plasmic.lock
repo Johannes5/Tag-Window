@@ -1,0 +1,93 @@
+{
+  "projects": [
+    {
+      "projectId": "h8pdmdKq58xaRhHHLoUNc6",
+      "version": "latest",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "type": "globalVariant",
+          "assetId": "3h0xbs2Xj8l",
+          "checksum": "95d5e35447ee2f2d19895112330c343f"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "t8AO7b27yJ",
+          "checksum": "57ed317a3896f22f15aa89e3c32a77f8"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "t8AO7b27yJ",
+          "checksum": "57ed317a3896f22f15aa89e3c32a77f8"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "qvj9LAuDos",
+          "checksum": "66daeb5ad203f31e1d72fed8c3f4d56f"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "qvj9LAuDos",
+          "checksum": "66daeb5ad203f31e1d72fed8c3f4d56f"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "NXlQXFGC2vW",
+          "checksum": "c23aca93ceda84b26f79c07cfdf0afd2"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "NXlQXFGC2vW",
+          "checksum": "c23aca93ceda84b26f79c07cfdf0afd2"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "exGK7pxvP83",
+          "checksum": "c5a0553af2b044dcc776a7ba23f4ae3f"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "exGK7pxvP83",
+          "checksum": "c5a0553af2b044dcc776a7ba23f4ae3f"
+        },
+        {
+          "type": "icon",
+          "assetId": "LvHcsk4gs9D",
+          "checksum": "62a11930080dab9a0e68e06c5718f940"
+        },
+        {
+          "type": "icon",
+          "assetId": "HvUfUv_Shlg",
+          "checksum": "9092605cb9608b310b232e99d591f8b0"
+        },
+        {
+          "type": "icon",
+          "assetId": "cMpVZ3mGR8",
+          "checksum": "24e997467f6a0edc131f33f59c75211c"
+        },
+        {
+          "type": "icon",
+          "assetId": "_Z7KNj0GT4",
+          "checksum": "e97dbc5b4784851bcc3679d8baba3fbb"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "pNbDNQdpNH",
+          "checksum": "c08b48c71bead4b318d20162b684c6f1"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "pNbDNQdpNH",
+          "checksum": "c08b48c71bead4b318d20162b684c6f1"
+        },
+        {
+          "assetId": "h8pdmdKq58xaRhHHLoUNc6",
+          "type": "projectCss",
+          "checksum": "7dda26a1e42d52e29f9528475095142f"
+        }
+      ]
+    }
+  ],
+  "cliVersion": "0.1.166"
+}
