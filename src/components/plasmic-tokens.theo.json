@@ -1,0 +1,29 @@
+{
+  "props": [
+    {
+      "name": "Pink",
+      "type": "color",
+      "value": "#D06693",
+      "category": "color",
+      "meta": {
+        "projectId": "h8pdmdKq58xaRhHHLoUNc6",
+        "id": "wtvLCUuqr"
+      }
+    },
+    {
+      "name": "Steel Blue",
+      "type": "color",
+      "value": "#344168",
+      "category": "color",
+      "meta": {
+        "projectId": "h8pdmdKq58xaRhHHLoUNc6",
+        "id": "yVv07z_86"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}

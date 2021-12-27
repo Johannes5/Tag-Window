@@ -1,0 +1,15 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  background: #255b98;
+  padding: 8px;
+}
+.slotTargetChildren {
+  color: #535353;
+}

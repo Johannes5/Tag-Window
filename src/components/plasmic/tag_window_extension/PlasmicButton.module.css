@@ -1,0 +1,437 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background: #344168;
+  cursor: pointer;
+  transition-property: background;
+  transition-duration: 0.1s;
+  border-radius: 6px;
+  padding: 12px 20px;
+  border-width: 0px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(0px - 4px);
+  width: calc(100% + 4px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 4px;
+}
+.root__showStartIcon {
+  padding-left: 16px;
+}
+.root__color_yellow {
+  background: #f5d90a;
+}
+.root__color_red {
+  background: #e54d2e;
+}
+.root__color_sand {
+  background: #717069;
+}
+.root__color_softBlue {
+  background: #edf6ff;
+}
+.root__color_softGreen {
+  background: #e9f9ee;
+}
+.root__color_softYellow {
+  background: #fffbd1;
+}
+.root__color_softRed {
+  background: #fff0ee;
+}
+.root__color_softSand {
+  background: #eeeeec;
+}
+.root__color_clear {
+  background: #ffffff00;
+}
+.root__color_link {
+  background: #ffffff00;
+}
+.root__showEndIcon {
+  padding-right: 16px;
+}
+.root__isDisabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.root__shape_rounded {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 100px;
+  border-radius: 999px;
+}
+.root__shape_round {
+  border-radius: 50%;
+  padding: 12px;
+}
+.root__size_compact {
+  padding: 6px 12px;
+}
+.root__size_minimal {
+  padding: 0px;
+}
+.root__color_blue {
+  background: #0091ff;
+}
+.root__color_green {
+  background: #30a46c;
+}
+.root__shape_round_size_compact {
+  padding: 6px;
+}
+.root__shape_rounded_showStartIcon {
+  padding-left: 16px;
+}
+.root__showEndIcon_shape_rounded {
+  padding-right: 16px;
+}
+.root__size_compact_showStartIcon {
+  padding-left: 8px;
+}
+.root__size_compact_showEndIcon {
+  padding-right: 8px;
+}
+.root:hover {
+  background: #282826;
+}
+.root__color_yellow:hover {
+  background: #ffef5c;
+}
+.root__color_red:hover {
+  background: #ec5e41;
+}
+.root__color_sand:hover {
+  background: #7f7e77;
+}
+.root__color_softBlue:hover {
+  background: #e1f0ff;
+}
+.root__color_softGreen:hover {
+  background: #ddf3e4;
+}
+.root__color_softYellow:hover {
+  background: #fff8bb;
+}
+.root__color_softRed:hover {
+  background: #ffe6e2;
+}
+.root__color_softSand:hover {
+  background: #e9e9e6;
+}
+.root__color_clear:hover {
+  background: #e9e9e6;
+}
+.root__color_link:hover {
+  background: #ffffff00;
+}
+.root__color_blue:hover {
+  background: #369eff;
+}
+.root__color_green:hover {
+  background: #3cb179;
+}
+.root:focus-within {
+  box-shadow: 0px 0px 0px 3px #96c7f2;
+  outline: none;
+}
+.root_____focusVisibleWithin {
+  box-shadow: 0px 0px 0px 3px #96c7f2;
+  outline: none;
+}
+.root:active {
+  background: #2e2e2b;
+}
+.root__color_yellow:active {
+  background: #f0c000;
+}
+.root__color_red:active {
+  background: #f16a50;
+}
+.root__color_sand:active {
+  background: #a1a09a;
+}
+.root__color_softBlue:active {
+  background: #cee7fe;
+}
+.root__color_softGreen:active {
+  background: #ccebd7;
+}
+.root__color_softYellow:active {
+  background: #fef2a4;
+}
+.root__color_softRed:active {
+  background: #fdd8d3;
+}
+.root__color_softSand:active {
+  background: #e3e3e0;
+}
+.root__color_clear:active {
+  background: #e3e3e0;
+}
+.root__color_link:active {
+  background: #ffffff00;
+}
+.root__color_blue:active {
+  background: #52a9ff;
+}
+.root__color_green:active {
+  background: #4cc38a;
+}
+.startIconContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.startIconContainer__showStartIcon {
+  display: flex;
+}
+.slotTargetStartIcon {
+  color: #ededec;
+}
+.slotTargetStartIcon__color_yellow {
+  color: #35290f;
+}
+.slotTargetStartIcon__color_softBlue {
+  color: #006adc;
+}
+.slotTargetStartIcon__color_softGreen {
+  color: #18794e;
+}
+.slotTargetStartIcon__color_softYellow {
+  color: #946800;
+}
+.slotTargetStartIcon__color_softRed {
+  color: #ca3214;
+}
+.slotTargetStartIcon__color_softSand {
+  color: #706f6c;
+}
+.slotTargetStartIcon__color_clear {
+  color: #1b1b18;
+}
+.slotTargetStartIcon__color_link {
+  color: #0091ff;
+}
+.root__color_link:hover .slotTargetStartIcon__color_link {
+  color: #0081f1;
+}
+.root__color_link:active .slotTargetStartIcon__color_link {
+  color: #006adc;
+}
+.svg__aNuYq {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+.contentContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.root .contentContainer_____focusVisibleWithin {
+  outline: none;
+}
+.slotTargetChildren {
+  color: #ededec;
+  font-weight: 500;
+  white-space: pre;
+}
+.slotTargetChildren__color_yellow {
+  color: #35290f;
+}
+.slotTargetChildren__color_red {
+  color: #ffffff;
+}
+.slotTargetChildren__color_sand {
+  color: #ffffff;
+}
+.slotTargetChildren__color_softBlue {
+  color: #006adc;
+}
+.slotTargetChildren__color_softGreen {
+  color: #18794e;
+}
+.slotTargetChildren__color_softYellow {
+  color: #946800;
+}
+.slotTargetChildren__color_softRed {
+  color: #ca3214;
+}
+.slotTargetChildren__color_softSand {
+  color: #706f6c;
+}
+.slotTargetChildren__color_clear {
+  color: #1b1b18;
+}
+.slotTargetChildren__color_link {
+  color: #0091ff;
+}
+.slotTargetChildren__color_blue {
+  color: #ffffff;
+}
+.slotTargetChildren__color_green {
+  color: #ffffff;
+}
+.root__color_link:hover .slotTargetChildren__color_link {
+  color: #0081f1;
+}
+.root__color_link:hover .slotTargetChildren__color_link > .__wab_text,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot-string-wrapper,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot
+  > .__wab_text,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot
+  > .__wab_slot-string-wrapper,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_text,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_text,
+.root__color_link:hover
+  .slotTargetChildren__color_link
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper {
+  text-decoration-line: underline;
+}
+.root:focus-within .slotTargetChildren > *,
+.root:focus-within .slotTargetChildren > .__wab_slot > *,
+.root:focus-within .slotTargetChildren > .__wab_slot > .__wab_slot > *,
+.root:focus-within
+  .slotTargetChildren
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > *,
+.root:focus-within .slotTargetChildren > picture > img,
+.root:focus-within .slotTargetChildren > .__wab_slot > picture > img,
+.root:focus-within
+  .slotTargetChildren
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img,
+.root:focus-within
+  .slotTargetChildren
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img {
+  outline: none;
+}
+.root .slotTargetChildren_____focusVisibleWithin > *,
+.root .slotTargetChildren_____focusVisibleWithin > .__wab_slot > *,
+.root
+  .slotTargetChildren_____focusVisibleWithin
+  > .__wab_slot
+  > .__wab_slot
+  > *,
+.root
+  .slotTargetChildren_____focusVisibleWithin
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > *,
+.root .slotTargetChildren_____focusVisibleWithin > picture > img,
+.root .slotTargetChildren_____focusVisibleWithin > .__wab_slot > picture > img,
+.root
+  .slotTargetChildren_____focusVisibleWithin
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img,
+.root
+  .slotTargetChildren_____focusVisibleWithin
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img {
+  outline: none;
+}
+.root__color_link:active .slotTargetChildren__color_link {
+  color: #006adc;
+}
+.endIconContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.endIconContainer__showEndIcon {
+  display: flex;
+}
+.slotTargetEndIcon {
+  color: #ededec;
+}
+.slotTargetEndIcon__color_yellow {
+  color: #35290f;
+}
+.slotTargetEndIcon__color_softBlue {
+  color: #006adc;
+}
+.slotTargetEndIcon__color_softGreen {
+  color: #18794e;
+}
+.slotTargetEndIcon__color_softYellow {
+  color: #946800;
+}
+.slotTargetEndIcon__color_softRed {
+  color: #ca3214;
+}
+.slotTargetEndIcon__color_softSand {
+  color: #706f6c;
+}
+.slotTargetEndIcon__color_clear {
+  color: #1b1b18;
+}
+.slotTargetEndIcon__color_link {
+  color: #0091ff;
+}
+.root__color_link:hover .slotTargetEndIcon__color_link {
+  color: #0081f1;
+}
+.root__color_link:active .slotTargetEndIcon__color_link {
+  color: #006adc;
+}
+.svg___3Kdjn {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
