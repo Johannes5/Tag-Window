@@ -94,6 +94,20 @@
           "cssFilePath": "plasmic/tag_window_extension/PlasmicToolTipFrame.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "bPAJdAquPC7",
+          "name": "Switch",
+          "type": "managed",
+          "projectId": "h8pdmdKq58xaRhHHLoUNc6",
+          "renderModuleFilePath": "plasmic/tag_window_extension/PlasmicSwitch.tsx",
+          "importSpec": {
+            "modulePath": "Switch.tsx"
+          },
+          "cssFilePath": "plasmic/tag_window_extension/PlasmicSwitch.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "switch"
         }
       ],
       "icons": [
@@ -133,6 +147,6 @@
       }
     ]
   },
-  "cliVersion": "0.1.166",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.166/dist/plasmic.schema.json"
+  "cliVersion": "0.1.167",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.167/dist/plasmic.schema.json"
 }

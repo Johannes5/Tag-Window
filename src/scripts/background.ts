@@ -1,17 +1,27 @@
 import { getRandomEmoji } from "./utils";
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.type == "getTabId") {
-    sendResponse(sender.tab.id);
+  if (message.type == "getWindowId") {
+    sendResponse(sender.tab.windowId);
   }
 });
 
-chrome.tabs.onCreated.addListener((tab) => {
+chrome.storage.local.get("active", (item) => {
+  if (item.active === undefined) {
+    chrome.storage.local.set({ active: true });
+  }
+});
+
+chrome.windows.onCreated.addListener((window) => {
   chrome.storage.local.set({
-    [tab.id.toString()]: getRandomEmoji(),
+    [window.id.toString()]: getRandomEmoji(),
   });
 });
 
-chrome.tabs.onRemoved.addListener((tabId) => {
-  chrome.storage.local.remove(tabId.toString());
+chrome.tabs.onMoved.addListener((tabId) => {
+  chrome.tabs.sendMessage(tabId, { type: "load" });
+});
+
+chrome.windows.onRemoved.addListener((windowId) => {
+  chrome.storage.local.remove(windowId.toString());
 });

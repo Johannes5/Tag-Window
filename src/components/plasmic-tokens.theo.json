@@ -1,9 +1,19 @@
 {
   "props": [
     {
+      "name": "Light Grey",
+      "type": "color",
+      "value": "#9D9FA6",
+      "category": "color",
+      "meta": {
+        "projectId": "h8pdmdKq58xaRhHHLoUNc6",
+        "id": "KnGFo1wgs"
+      }
+    },
+    {
       "name": "Pink",
       "type": "color",
-      "value": "#D06693",
+      "value": "#E087AD",
       "category": "color",
       "meta": {
         "projectId": "h8pdmdKq58xaRhHHLoUNc6",

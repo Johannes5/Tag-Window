@@ -33,8 +33,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_tag_window_extension.module.css"; // plasmic-import: h8pdmdKq58xaRhHHLoUNc6/projectcss
-import * as sty from "./PlasmicToolTipFrame.module.css"; // plasmic-import: pNbDNQdpNH/css
+import projectcss from "./plasmic_tag_window_extension.module.css"; // plasmic-import: h8pdmdKq58xaRhHHLoUNc6/projectcss
+import sty from "./PlasmicToolTipFrame.module.css"; // plasmic-import: pNbDNQdpNH/css
 
 export type PlasmicToolTipFrame__VariantMembers = {};
 
@@ -62,10 +62,10 @@ function PlasmicToolTipFrame__RenderFunc(props: {
   variants: PlasmicToolTipFrame__VariantsArgs;
   args: PlasmicToolTipFrame__ArgsType;
   overrides: PlasmicToolTipFrame__OverridesType;
-  dataFetches?: PlasmicToolTipFrame__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -105,7 +105,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicToolTipFrame__VariantsArgs;
     args?: PlasmicToolTipFrame__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicToolTipFrame__Fetches;
   } & Omit<PlasmicToolTipFrame__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicToolTipFrame__ArgsType, ReservedPropsType> &
@@ -132,13 +131,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicToolTipFrame__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicToolTipFrame__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C900&display=swap");
+
 .all {
   display: block;
   white-space: inherit;
@@ -17,6 +18,10 @@
 .img {
   composes: all;
   display: inline-block;
+}
+.li {
+  composes: all;
+  display: list-item;
 }
 .span {
   composes: all;
@@ -142,10 +147,6 @@
   composes: all;
   padding: 2px 6px;
 }
-.li {
-  composes: all;
-  list-style-type: none;
-}
 .plasmic_default__component_wrapper {
   display: grid;
 }
@@ -178,7 +179,7 @@
 :where(.root_reset) h1,
 :where(.root_reset) .plasmic_default__h1,
 :where(.root_reset) .h1,
-h1:where(.root_reset) {
+.plasmic_default__h1:where(.root_reset) {
   color: #000000;
   font-weight: 900;
   font-size: 72px;
@@ -189,49 +190,52 @@ h1:where(.root_reset) {
 :where(.root_reset) h2,
 :where(.root_reset) .plasmic_default__h2,
 :where(.root_reset) .h2,
-h2:where(.root_reset) {
+.plasmic_default__h2:where(.root_reset) {
+  font-family: "Inter";
   color: #000000;
-  font-weight: 700;
   font-size: 48px;
-  line-height: 1.1;
+  font-weight: 700;
   letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 :where(.root_reset) a,
 :where(.root_reset) .plasmic_default__a,
 :where(.root_reset) .a,
-a:where(.root_reset) {
-  color: #3291ff;
+.plasmic_default__a:where(.root_reset) {
+  color: #0070f3;
 }
 
 :where(.root_reset) h3,
 :where(.root_reset) .plasmic_default__h3,
 :where(.root_reset) .h3,
-h3:where(.root_reset) {
+.plasmic_default__h3:where(.root_reset) {
+  font-family: "Inter";
   color: #000000;
-  font-weight: 600;
   font-size: 32px;
-  line-height: 1.2;
+  font-weight: 600;
   letter-spacing: -0.8px;
+  line-height: 1.2;
 }
 
 :where(.root_reset) h4,
 :where(.root_reset) .plasmic_default__h4,
 :where(.root_reset) .h4,
-h4:where(.root_reset) {
+.plasmic_default__h4:where(.root_reset) {
+  font-family: "Inter";
   color: #000000;
-  font-weight: 600;
   font-size: 24px;
-  line-height: 1.3;
+  font-weight: 600;
   letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 
 :where(.root_reset) code,
 :where(.root_reset) .plasmic_default__code,
 :where(.root_reset) .code,
-code:where(.root_reset) {
-  font-family: "Inconsolata";
+.plasmic_default__code:where(.root_reset) {
   background: linear-gradient(#f8f8f8, #f8f8f8);
+  font-family: "Inconsolata";
   border-radius: 3px;
   padding: 1px 4px;
   border: 1px solid #dddddd;
@@ -240,7 +244,7 @@ code:where(.root_reset) {
 :where(.root_reset) blockquote,
 :where(.root_reset) .plasmic_default__blockquote,
 :where(.root_reset) .blockquote,
-blockquote:where(.root_reset) {
+.plasmic_default__blockquote:where(.root_reset) {
   color: #888888;
   padding-left: 10px;
   border-left: 3px solid #dddddd;
@@ -249,10 +253,70 @@ blockquote:where(.root_reset) {
 :where(.root_reset) pre,
 :where(.root_reset) .plasmic_default__pre,
 :where(.root_reset) .pre,
-pre:where(.root_reset) {
-  font-family: "Inconsolata";
+.plasmic_default__pre:where(.root_reset) {
   background: linear-gradient(#f8f8f8, #f8f8f8);
+  font-family: "Inconsolata";
   border-radius: 3px;
   padding: 3px 6px;
   border: 1px solid #dddddd;
+}
+
+:where(.root_reset) h5,
+:where(.root_reset) .plasmic_default__h5,
+:where(.root_reset) .h5,
+.plasmic_default__h5:where(.root_reset) {
+  font-family: "Inter";
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+}
+
+:where(.root_reset) h6,
+:where(.root_reset) .plasmic_default__h6,
+:where(.root_reset) .h6,
+.plasmic_default__h6:where(.root_reset) {
+  font-family: "Inter";
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+:where(.root_reset) a:hover,
+:where(.root_reset) .plasmic_default__a:hover,
+:where(.root_reset) .a:hover,
+.plasmic_default__a:hover:where(.root_reset) {
+  color: #3291ff;
+}
+
+:where(.root_reset) ol,
+:where(.root_reset) .plasmic_default__ol,
+:where(.root_reset) .ol,
+.plasmic_default__ol:where(.root_reset) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  list-style-position: outside;
+  padding-left: 40px;
+  position: relative;
+  list-style-type: decimal;
+  flex-column-gap: 0px;
+}
+
+:where(.root_reset) ul,
+:where(.root_reset) .plasmic_default__ul,
+:where(.root_reset) .ul,
+.plasmic_default__ul:where(.root_reset) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  list-style-position: outside;
+  padding-left: 40px;
+  position: relative;
+  list-style-type: disc;
+  flex-column-gap: 0px;
 }

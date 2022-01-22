@@ -1,19 +1,26 @@
-import { getRandomEmoji } from "./utils";
+const titleInnerHTML = document.querySelector("title").innerHTML;
 
-chrome.runtime.sendMessage({ type: "getTabId" }, (tabId) => {
-  const key = tabId.toString();
-
-  chrome.storage.local.get(key, (item) => {
-    let emoji = item[key];
-    if (emoji === undefined) {
-      emoji = getRandomEmoji();
-      chrome.storage.local.set({
-        [key]: emoji,
-      });
-    }
-
-    document.querySelector("title").prepend(`${emoji} | `);
-  });
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type == "load") {
+    load();
+  }
 });
+
+const load = () => {
+  chrome.runtime.sendMessage({ type: "getWindowId" }, (windowId) => {
+    const key = windowId.toString();
+    console.log(key);
+
+    chrome.storage.local.get([key], (item) => {
+      if (item[key]) {
+        document.querySelector(
+          "title"
+        ).innerHTML = `${item[key]} | ${titleInnerHTML}`;
+      }
+    });
+  });
+};
+
+load();
 
 export {};
