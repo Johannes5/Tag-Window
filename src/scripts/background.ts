@@ -13,8 +13,12 @@ chrome.storage.local.get("active", (item) => {
 });
 
 chrome.windows.onCreated.addListener((window) => {
-  chrome.storage.local.set({
-    [window.id.toString()]: getRandomEmoji(),
+  chrome.storage.local.get("active", (item) => {
+    if (item.active) {
+      chrome.storage.local.set({
+        [window.id.toString()]: getRandomEmoji(),
+      });
+    }
   });
 });
 
