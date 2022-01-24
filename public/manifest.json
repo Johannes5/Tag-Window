@@ -26,7 +26,7 @@
       "js": ["./static/js/content.js"]
     }
   ],
-  "permissions": ["tabs", "scripting", "storage"],
+  "permissions": ["tabs", "storage"],
   "host_permissions": ["<all_urls>"],
   "icons": {
     "16": "logo192.png",
