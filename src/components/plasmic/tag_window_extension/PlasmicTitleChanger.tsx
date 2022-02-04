@@ -32,11 +32,12 @@ import {
 } from "@plasmicapp/react-web";
 import TextInput from "../../TextInput"; // plasmic-import: NXlQXFGC2vW/component
 import Button from "../../Button"; // plasmic-import: exGK7pxvP83/component
+import Switch from "../../Switch"; // plasmic-import: bPAJdAquPC7/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_tag_window_extension.module.css"; // plasmic-import: h8pdmdKq58xaRhHHLoUNc6/projectcss
-import * as sty from "./PlasmicTitleChanger.module.css"; // plasmic-import: qvj9LAuDos/css
+import projectcss from "./plasmic_tag_window_extension.module.css"; // plasmic-import: h8pdmdKq58xaRhHHLoUNc6/projectcss
+import sty from "./PlasmicTitleChanger.module.css"; // plasmic-import: qvj9LAuDos/css
 
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: LvHcsk4gs9D/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: HvUfUv_Shlg/icon
@@ -58,6 +59,7 @@ export type PlasmicTitleChanger__OverridesType = {
   button?: p.Flex<typeof Button>;
   infoIconWrapper?: p.Flex<"div">;
   infoIcon?: p.Flex<"svg">;
+  autoTaggingSwitch?: p.Flex<typeof Switch>;
   textbox?: p.Flex<typeof TextInput>;
 };
 
@@ -69,10 +71,10 @@ function PlasmicTitleChanger__RenderFunc(props: {
   variants: PlasmicTitleChanger__VariantsArgs;
   args: PlasmicTitleChanger__ArgsType;
   overrides: PlasmicTitleChanger__OverridesType;
-  dataFetches?: PlasmicTitleChanger__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     true ? (
@@ -124,7 +126,7 @@ function PlasmicTitleChanger__RenderFunc(props: {
                 sty.text__wYz1H
               )}
             >
-              {"to make it easier to spot a window"}
+              {"to make it easier to spot this window"}
             </div>
 
             {true ? (
@@ -143,6 +145,37 @@ function PlasmicTitleChanger__RenderFunc(props: {
             ) : null}
           </p.Stack>
         ) : null}
+
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__jat6B
+          )}
+        >
+          {"------------------\n"}
+        </div>
+
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__mVVy
+          )}
+        >
+          {
+            "By default, every window gets a unique emoji tag. This happens automatically unless turned off. "
+          }
+        </div>
+
+        <Switch
+          data-plasmic-name={"autoTaggingSwitch"}
+          data-plasmic-override={overrides.autoTaggingSwitch}
+          className={classNames("__wab_instance", sty.autoTaggingSwitch)}
+          defaultChecked={true}
+        >
+          {null}
+        </Switch>
       </div>
     ) : null
   ) as React.ReactElement | null;
@@ -155,12 +188,14 @@ const PlasmicDescendants = {
     "textbox",
     "button",
     "infoIconWrapper",
-    "infoIcon"
+    "infoIcon",
+    "autoTaggingSwitch"
   ],
   textInput: ["textInput", "textbox"],
   button: ["button"],
   infoIconWrapper: ["infoIconWrapper", "infoIcon"],
-  infoIcon: ["infoIcon"]
+  infoIcon: ["infoIcon"],
+  autoTaggingSwitch: ["autoTaggingSwitch"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -171,6 +206,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   infoIconWrapper: "div";
   infoIcon: "svg";
+  autoTaggingSwitch: typeof Switch;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -184,7 +220,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicTitleChanger__VariantsArgs;
     args?: PlasmicTitleChanger__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicTitleChanger__Fetches;
   } & Omit<PlasmicTitleChanger__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicTitleChanger__ArgsType, ReservedPropsType> &
@@ -211,13 +246,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicTitleChanger__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicTitleChanger__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
@@ -238,6 +270,7 @@ export const PlasmicTitleChanger = Object.assign(
     button: makeNodeComponent("button"),
     infoIconWrapper: makeNodeComponent("infoIconWrapper"),
     infoIcon: makeNodeComponent("infoIcon"),
+    autoTaggingSwitch: makeNodeComponent("autoTaggingSwitch"),
 
     // Metadata about props expected for PlasmicTitleChanger
     internalVariantProps: PlasmicTitleChanger__VariantProps,

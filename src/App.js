@@ -1,90 +1,76 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import TitleChanger from './components/TitleChanger'
-import Tooltip from './components/Tooltip'
-
-/*let tag = ''
-
-function tagWindow(){
-    console.log("tagWindow", tag)
-}*/
-
-function updateTitlePreposition(str) {
-    //tag = str
-    document.title = " " + str + " | " + document.title
-}
-
-
-
+import TitleChanger from "./components/TitleChanger";
+import Tooltip from "./components/Tooltip";
+import { NormalSwitch } from "./components/NormalSwitch";
 
 function App() {
-    const [titlePreposition, setTitlePreposition] = React.useState('');
-    const [input, setInput] = React.useState('');
-    const inputRef = React.useRef(null);
+  const [titlePreposition, setTitlePreposition] = React.useState("");
+  const [input, setInput] = React.useState("");
+  const inputRef = React.useRef(null);
 
-    React.useEffect(() => {
+  React.useEffect(() => {
+    if (titlePreposition === "") {
+      inputRef.current.focus();
+      return;
+    }
 
-        if (titlePreposition === '') {
-            inputRef.current.focus()
-            return
+    chrome.tabs.query({ currentWindow: true }, (tabs) => {
+      chrome.storage.local.set(
+        {
+          [tabs[0].windowId.toString()]: titlePreposition,
+        },
+        () => {
+          tabs.forEach((tab) => {
+            if (tab.status === "unloaded") {
+              chrome.tabs.reload(tab.id);
+            }
+
+            chrome.tabs.sendMessage(tab.id, { type: "load" });
+          });
         }
+      );
+    });
+  }, [titlePreposition]);
 
-        chrome.tabs.query({currentWindow: true}, tabs => {
-            tabs.forEach(tab => {
+  const inputHandler = (event) => {
+    setInput(event.target.value);
+  };
 
-                console.log("tab", tab)
+  const submitHandler = () => {
+    setTitlePreposition(input);
+    console.log("titlePreposition", titlePreposition);
+  };
 
-                if (tab.status === "unloaded") {
-                    chrome.tabs.reload(tab.id)
-                }
-
-                if (!tab.url?.startsWith('chrome://')) {
-                    //chrome.tabs.onUpdated.addListener((tab.id, {}, tab) => {updateTitlePreposition(titlePreposition)})
-                    //chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {updateTitlePreposition(titlePreposition)})
-
-                    chrome.scripting.executeScript({
-                        target: {tabId: tab.id},
-                        func: updateTitlePreposition,
-                        args: [titlePreposition]
-                    });
-                }
-            });
-        });
-    }, [titlePreposition])
-
-    const inputHandler = (event) => {
-        setInput(event.target.value);
-    }
-
-    const submitHandler = () => {
-        setTitlePreposition(input);
-        console.log("titlePreposition", titlePreposition);
-
-
-    }
-
-    return (
-        <TitleChanger
-            textInput={{
-                onChange: inputHandler,
-                ref: inputRef
-            }}
-
-            button={{
-                onClick: submitHandler
-            }}
-
-            infoIconWrapper={{
-                wrapChildren: (children) => (
-                    <Tooltip id="why" content={"when you are looking at Application Exposé / Mission Control" + "\n" +
-                    "and find yourself squinting at tab bars"}>
-                        {children}
-                    </Tooltip>
-                ),
-            }}
-        />
-    );
+  return (
+    <>
+      <TitleChanger
+        textInput={{
+          onChange: inputHandler,
+          ref: inputRef,
+        }}
+        button={{
+          onClick: submitHandler,
+        }}
+        infoIconWrapper={{
+          wrapChildren: (children) => (
+            <Tooltip
+              id="why"
+              content={
+                "when you are looking at Application Exposé / Mission Control" +
+                "\n" +
+                "and find yourself squinting at tab bars"
+              }
+            >
+              {children}
+            </Tooltip>
+          ),
+        }}
+      />
+      <NormalSwitch />
+    </>
+  );
 }
 
 export default App;

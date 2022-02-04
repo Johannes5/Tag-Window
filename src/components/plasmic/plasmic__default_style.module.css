@@ -17,6 +17,10 @@
   composes: all;
   display: inline-block;
 }
+.li {
+  composes: all;
+  display: list-item;
+}
 .span {
   composes: all;
   display: inline;
@@ -140,10 +144,6 @@
 .select {
   composes: all;
   padding: 2px 6px;
-}
-.li {
-  composes: all;
-  list-style-type: none;
 }
 .plasmic_default__component_wrapper {
   display: grid;

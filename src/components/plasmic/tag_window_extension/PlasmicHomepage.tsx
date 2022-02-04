@@ -33,8 +33,8 @@ import {
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import * as projectcss from "./plasmic_tag_window_extension.module.css"; // plasmic-import: h8pdmdKq58xaRhHHLoUNc6/projectcss
-import * as sty from "./PlasmicHomepage.module.css"; // plasmic-import: t8AO7b27yJ/css
+import projectcss from "./plasmic_tag_window_extension.module.css"; // plasmic-import: h8pdmdKq58xaRhHHLoUNc6/projectcss
+import sty from "./PlasmicHomepage.module.css"; // plasmic-import: t8AO7b27yJ/css
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -60,10 +60,10 @@ function PlasmicHomepage__RenderFunc(props: {
   variants: PlasmicHomepage__VariantsArgs;
   args: PlasmicHomepage__ArgsType;
   overrides: PlasmicHomepage__OverridesType;
-  dataFetches?: PlasmicHomepage__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <React.Fragment>
@@ -136,7 +136,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHomepage__VariantsArgs;
     args?: PlasmicHomepage__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHomepage__Fetches;
   } & Omit<PlasmicHomepage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHomepage__ArgsType, ReservedPropsType> &
@@ -163,13 +162,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHomepage__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHomepage__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
